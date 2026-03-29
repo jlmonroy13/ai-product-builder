@@ -25,12 +25,12 @@ Analyze execution outcomes and produce:
 
 Load:
 
-* 4-SYSTEM-DESIGN.md
-* 5-SCREEN-SPECS.md
-* 6-REFINED-STORIES.md
-* 7-PLANNING.md
-* 8-AI-TASKS.md
-* 9-EXECUTION-FEEDBACK-TEMPLATE.md
+* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+* {{ARTIFACTS_PATH}}/5-SCREEN-SPECS.md
+* {{ARTIFACTS_PATH}}/6-REFINED-STORIES.md
+* {{ARTIFACTS_PATH}}/7-PLANNING.md
+* {{ARTIFACTS_PATH}}/8-AI-TASKS.md
+* {{TEMPLATES_PATH}}/9-feedback-template.md
 
 ---
 
@@ -109,7 +109,7 @@ For EACH task:
 
 Save as:
 
-9-EXECUTION-FEEDBACK.md
+{{ARTIFACTS_PATH}}/9-EXECUTION-FEEDBACK.md
 
 ---
 

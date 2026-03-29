@@ -28,10 +28,10 @@ Each story must be:
 
 Load:
 
-* 2-DISCOVERY.md
-* 4-SYSTEM-DESIGN.md
-* 5-SCREEN-SPECS.md
-* 6-REFINED-STORIES-TEMPLATE.md
+* {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+* {{ARTIFACTS_PATH}}/5-SCREEN-SPECS.md
+* {{TEMPLATES_PATH}}/6-stories-template.md
 
 ---
 
@@ -39,22 +39,22 @@ Load:
 
 If available:
 
-* 3B-UI-VALIDATION.md
+* {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
 ---
 
 ## Source of Truth Priority (CRITICAL)
 
-1. 2-DISCOVERY.md
-2. 4-SYSTEM-DESIGN.md
-3. 5-SCREEN-SPECS.md
-4. 3B-UI-VALIDATION.md (optional, non-authoritative)
+1. {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+2. {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+3. {{ARTIFACTS_PATH}}/5-SCREEN-SPECS.md
+4. {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md (optional, non-authoritative)
 
 ---
 
 ## UI Validation Usage (OPTIONAL)
 
-If 3B-UI-VALIDATION.md is provided:
+If {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md is provided:
 
 You MAY use it ONLY for:
 
@@ -150,7 +150,7 @@ For EACH story:
 
 Save the result as:
 
-6-REFINED-STORIES.md
+{{ARTIFACTS_PATH}}/6-REFINED-STORIES.md
 
 ---
 

@@ -1,4 +1,4 @@
-# 4A-TECH-PREFERENCES.md
+# {{ARTIFACTS_PATH}}/4A-TECH-PREFERENCES.md
 
 ## Objective
 

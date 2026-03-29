@@ -33,14 +33,14 @@ Then generate a file that strictly follows the provided template.
 
 Load the following files:
 
-1. 2-DISCOVERY.md
-2. 4A-TECH-PREFERENCES-TEMPLATE.md
+1. {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+2. {{TEMPLATES_PATH}}/4a-tech-template.md
 
 ---
 
 ## Context Injection (MANDATORY)
 
-From 2-DISCOVERY.md:
+From {{ARTIFACTS_PATH}}/2-DISCOVERY.md:
 
 * Extract a short product summary (1–2 lines)
 
@@ -182,7 +182,7 @@ After collecting ALL answers:
 
 Generate the file:
 
-4A-TECH-PREFERENCES.md
+{{ARTIFACTS_PATH}}/4A-TECH-PREFERENCES.md
 
 ---
 

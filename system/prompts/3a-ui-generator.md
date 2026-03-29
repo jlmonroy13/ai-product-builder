@@ -25,7 +25,7 @@ Transform the Discovery Specification into a UI generation prompt that:
 
 Load input from:
 
-2-DISCOVERY.md
+{{ARTIFACTS_PATH}}/2-DISCOVERY.md
 
 Use it as the ONLY source of truth.
 
@@ -143,7 +143,7 @@ The prompt MUST:
 
 Save the result as:
 
-3-UI-PROMPT.md
+{{ARTIFACTS_PATH}}/3-UI-PROMPT.md
 
 ---
 

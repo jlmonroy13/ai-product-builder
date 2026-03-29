@@ -31,7 +31,7 @@ Everything must be explicit and directly usable for implementation planning.
 
 Load input from:
 
-* 2-DISCOVERY.md
+* {{ARTIFACTS_PATH}}/2-DISCOVERY.md
 
 This is the PRIMARY source of truth.
 
@@ -48,14 +48,14 @@ You MUST:
 
 If available, you MAY read:
 
-* 3B-UI-VALIDATION.md
-* 4A-TECH-PREFERENCES.md
+* {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
+* {{ARTIFACTS_PATH}}/4A-TECH-PREFERENCES.md
 
 ---
 
 ## Optional Input Rules
 
-### 3B-UI-VALIDATION.md
+### {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
 Use ONLY as a weak signal for:
 
@@ -70,7 +70,7 @@ You MUST NOT:
 
 ---
 
-### 4A-TECH-PREFERENCES.md
+### {{ARTIFACTS_PATH}}/4A-TECH-PREFERENCES.md
 
 Use as input for:
 
@@ -93,9 +93,9 @@ You MUST NOT:
 
 ## Source of Truth Priority (CRITICAL)
 
-1. 2-DISCOVERY.md
-2. 4A-TECH-PREFERENCES.md
-3. 3B-UI-VALIDATION.md
+1. {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+2. {{ARTIFACTS_PATH}}/4A-TECH-PREFERENCES.md
+3. {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
 ---
 
@@ -316,7 +316,7 @@ Explain:
 
 Save the result as:
 
-4-SYSTEM-DESIGN.md
+{{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
 
 ---
 

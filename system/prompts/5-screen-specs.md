@@ -27,9 +27,9 @@ The output must be:
 
 Load:
 
-* 2-DISCOVERY.md
-* 4-SYSTEM-DESIGN.md
-* 5-SCREEN-SPECS-TEMPLATE.md
+* {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+* {{TEMPLATES_PATH}}/5-screen-specs-template.md
 
 ---
 
@@ -37,7 +37,7 @@ Load:
 
 If available:
 
-* 3B-UI-VALIDATION.md
+* {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
 ---
 
@@ -118,7 +118,7 @@ Use EXACT template structure.
 
 Save as:
 
-5-SCREEN-SPECS.md
+{{ARTIFACTS_PATH}}/5-SCREEN-SPECS.md
 
 ---
 

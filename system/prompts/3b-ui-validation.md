@@ -31,17 +31,17 @@ Produce a structured analysis of UI screenshots that:
 You will receive:
 
 1. The file:
-   2-DISCOVERY.md
+   {{ARTIFACTS_PATH}}/2-DISCOVERY.md
 
 2. A set of UI screenshots located at:
 
-   /screenshots/
+   {{SCREENSHOTS_PATH}}/
 
 ---
 
 ## Screenshot Input Rule (CRITICAL)
 
-* Load ALL images from /screenshots/
+* Load ALL images from {{SCREENSHOTS_PATH}}/
 * Each image represents a UI screen
 
 You MUST:
@@ -72,7 +72,7 @@ If a screenshot cannot be matched to any screen in Discovery:
 
 ## Source of Truth Rule (CRITICAL)
 
-* 2-DISCOVERY.md is the ONLY source of truth
+* {{ARTIFACTS_PATH}}/2-DISCOVERY.md is the ONLY source of truth
 * Screenshots are NOT authoritative
 
 If there is any conflict:
@@ -228,7 +228,7 @@ At the end, include:
 
 Save the result as:
 
-3B-UI-VALIDATION.md
+{{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
 ---
 

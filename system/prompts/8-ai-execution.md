@@ -31,9 +31,9 @@ Each task must be:
 
 Load:
 
-* 4-SYSTEM-DESIGN.md
-* 7-PLANNING.md
-* 8-AI-EXECUTION-TEMPLATE.md
+* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+* {{ARTIFACTS_PATH}}/7-PLANNING.md
+* {{TEMPLATES_PATH}}/8-ai-tasks-template.md
 
 ---
 
@@ -114,7 +114,7 @@ For EACH task:
 
 Save as:
 
-8-AI-TASKS.md
+{{ARTIFACTS_PATH}}/8-AI-TASKS.md
 
 ---
 

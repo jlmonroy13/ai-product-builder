@@ -22,7 +22,7 @@ Produce a fully defined product specification that can be used directly for:
 
 Load the input from:
 
-1-IDEA.md
+{{ARTIFACTS_PATH}}/1-IDEA.md
 
 Use it as the ONLY source of truth.
 
@@ -216,7 +216,7 @@ Explicitly list what is NOT included.
 
 Save the result as:
 
-2-DISCOVERY.md
+{{ARTIFACTS_PATH}}/2-DISCOVERY.md
 
 ---
 

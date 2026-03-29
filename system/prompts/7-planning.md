@@ -28,11 +28,11 @@ Generate a structured development plan that:
 
 Load:
 
-* 2-DISCOVERY.md
-* 4-SYSTEM-DESIGN.md
-* 5-SCREEN-SPECS.md
-* 6-REFINED-STORIES.md
-* 7-PLANNING-TEMPLATE.md
+* {{ARTIFACTS_PATH}}/2-DISCOVERY.md
+* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+* {{ARTIFACTS_PATH}}/5-SCREEN-SPECS.md
+* {{ARTIFACTS_PATH}}/6-REFINED-STORIES.md
+* {{TEMPLATES_PATH}}/7-planning-template.md
 
 ---
 
@@ -128,7 +128,7 @@ For EACH milestone:
 
 Save as:
 
-7-PLANNING.md
+{{ARTIFACTS_PATH}}/7-PLANNING.md
 
 ---
 

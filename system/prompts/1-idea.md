@@ -108,7 +108,7 @@ The main object being created, tracked, or managed.
 
 The result of this stage MUST be saved as:
 
-1-IDEA.md
+{{ARTIFACTS_PATH}}/1-IDEA.md
 
 This file will be used as input for Stage 2.
 
