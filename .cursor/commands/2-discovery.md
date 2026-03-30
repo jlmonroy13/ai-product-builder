@@ -1,0 +1,7 @@
+# Stage 2 — Discovery
+
+Follow **exactly** `system/prompts/2-discovery.md` (role, rules, output format).
+
+- Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
+- Required input includes `projects/default-project/artifacts/1-IDEA.md`.
+- Save the stage output to `projects/default-project/artifacts/2-DISCOVERY.md` when persisting artifacts.
