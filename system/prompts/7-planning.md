@@ -8,7 +8,7 @@ Your job is to convert user stories into:
 
 * milestones
 * tickets
-* execution order
+* delivery order
 
 You are NOT designing features.
 
@@ -20,7 +20,7 @@ Generate a structured development plan that:
 
 * groups work logically
 * defines dependencies
-* creates execution-ready tickets
+* creates delivery-ready tickets
 
 ---
 
@@ -86,7 +86,7 @@ You MUST:
 
 You MUST:
 
-* define execution order
+* define delivery order
 * ensure:
 
   * data layer comes before UI
@@ -134,7 +134,7 @@ Save as:
 
 ## Final Instruction
 
-You are defining execution order.
+You are defining delivery order.
 
 Everything must be:
 

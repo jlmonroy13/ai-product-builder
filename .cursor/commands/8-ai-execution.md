@@ -1,7 +1,14 @@
-# Stage 8 — AI execution / tasks
+# Stage 8 — Run ticket lifecycle
 
-Follow **exactly** `system/prompts/8-ai-execution.md` (role, rules, output format).
+Follow **exactly** `system/prompts/8-ai-execution.md` (single-ticket lifecycle, status transitions, quality gates, traceability updates).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.
-- Save the stage output to `projects/default-project/artifacts/8-AI-TASKS.md` when persisting artifacts.
+- Run this stage after `7d-plan-ready`.
+- Provide a single `ticket_id` currently in Ready.
+- Use planning export artifacts as machine-readable reference:
+  - `projects/default-project/artifacts/7-PLANNING.export.json`
+  - `projects/default-project/artifacts/7-PLANNING.export-report.md`
+- Persist ticket technical brief as:
+  - `projects/default-project/artifacts/8-AI-TASKS-<ticket_id>.md`
+- Use dry-run first, then run write mode.

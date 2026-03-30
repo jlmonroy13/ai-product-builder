@@ -1,0 +1,9 @@
+# Stage 7D — Plan ready (Backlog -> Ready)
+
+Follow **exactly** `system/prompts/7d-plan-ready.md` (role, rules, readiness checks, output report).
+
+- Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
+- Required inputs are listed in that prompt.
+- Run this stage after milestone publishing (`7c-publish-milestone-to-github-project`).
+- Provide `github_project_url` as preferred runtime input.
+- Use dry-run first, then run write mode.

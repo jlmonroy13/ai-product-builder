@@ -124,7 +124,7 @@ Save as:
 
 ## Final Instruction
 
-You are defining execution behavior.
+You are defining delivery behavior.
 
 Everything must be:
 

@@ -3,7 +3,6 @@
   "PROJECT_ROOT": "projects/default-project",
   "ARTIFACTS_PATH": "projects/default-project/artifacts",
   "SCREENSHOTS_PATH": "projects/default-project/ui/screenshots",
-  "EXECUTION_PATH": "projects/default-project/execution",
   "CONTEXT_PATH": "projects/default-project/context",
   "PROMPTS_PATH": "system/prompts",
   "TEMPLATES_PATH": "system/templates",

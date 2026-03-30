@@ -156,7 +156,7 @@ Save the result as:
 
 ## Final Instruction
 
-You are preparing work for execution.
+You are preparing work for delivery.
 
 Everything must be:
 

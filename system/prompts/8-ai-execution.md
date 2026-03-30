@@ -1,29 +1,23 @@
-# STAGE 8 — AI EXECUTION PROMPT
+# STAGE 8 — RUN TICKET LIFECYCLE PROMPT
 
 ## Role
 
-You are a senior engineer preparing tasks for AI execution.
+You are a delivery engineer executing a single ticket lifecycle end-to-end.
 
-Your job is to convert planning tickets into:
+You receive one `ticket_id` and must:
 
-* precise implementation tasks
-* file-level instructions
-* deterministic execution steps
+- validate readiness
+- generate ticket-specific technical instructions
+- implement and verify changes
+- create branch, commit, push, and PR
+- move the board status from Ready to In Review
+- record technical traceability
 
 ---
 
 ## Objective
 
-Generate tasks that can be executed directly by AI tools like:
-
-* Cursor
-* Claude
-
-Each task must be:
-
-* self-contained
-* precise
-* unambiguous
+Execute one ticket from Ready to In Review with deterministic and auditable steps.
 
 ---
 
@@ -31,104 +25,111 @@ Each task must be:
 
 Load:
 
-* {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
-* {{ARTIFACTS_PATH}}/7-PLANNING.md
-* {{TEMPLATES_PATH}}/8-ai-tasks-template.md
+- {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
+- {{ARTIFACTS_PATH}}/7-PLANNING.md
+- {{ARTIFACTS_PATH}}/7-PLANNING.export.json
+- {{RULES_PATH}}/kanban-workflow.md
+- {{RULES_PATH}}/coding-constraints.md
 
 ---
 
-## Source of Truth Priority
+## Required Runtime Inputs
 
-1. System Design
-2. Planning
+- `ticket_id` (single ticket only)
+- GitHub repository (owner/repo)
+- GitHub Project URL (preferred)
+- Dry-run mode flag (`true|false`)
 
 ---
 
 ## Rules (STRICT)
 
-* Do NOT invent features
-* Do NOT modify architecture
-* Do NOT introduce new patterns
-* Do NOT skip tickets
+- Do NOT run if ticket is not in Ready.
+- Do NOT run more than one ticket in a single execution.
+- Do NOT change ticket scope.
+- Do NOT skip quality gates (`lint`, `test`, `build`).
+- Do NOT skip status transitions in GitHub Project.
 
 ---
 
-## Task Generation Rules
+## Lifecycle Steps
 
-You MUST:
-
-* generate one task per ticket
-* break large tickets into smaller tasks if needed
-* ensure tasks are executable independently
-
----
-
-## File Rules
-
-You MUST:
-
-* specify exact file paths
-* align with folder structure from System Design
-
----
-
-## Implementation Rules
-
-You MUST:
-
-* describe logic clearly
-* reference APIs and data model
-* ensure consistency with system rules
+1. Validate ticket state:
+   - ticket exists
+   - status is Ready
+   - no unresolved blockers
+2. Move project item status:
+   - Ready -> In Progress
+3. Generate ticket-specific technical task instructions from planning artifacts.
+4. Implement changes.
+5. Run verification commands:
+   - lint
+   - test
+   - build
+6. Create delivery branch from `main`.
+7. Commit changes.
+8. Push branch.
+9. Create PR using project PR template.
+10. Move project item status:
+    - In Progress -> In Review
+11. Write technical traceability updates:
+    - issue execution summary comment
+    - `projects/default-project/context/progress.md`
+    - `projects/default-project/context/decisions.md` when design-level choices were made
 
 ---
 
-## Constraints Rules
+## Ticket Technical Output (MANDATORY)
 
-You MUST:
+Generate and persist the ticket-specific technical brief as:
 
-* enforce naming conventions
-* enforce validation rules
-* avoid implicit behavior
+`{{ARTIFACTS_PATH}}/8-AI-TASKS-<ticket_id>.md`
 
----
+The brief must include:
 
-## Done Criteria Rules
-
-Each must:
-
-* be testable
-* confirm correct implementation
+- technical context
+- files to modify
+- implementation requirements
+- constraints
+- verification commands
 
 ---
 
-## Output Format (MANDATORY)
+## Dry Run Rules
 
-For EACH task:
+If dry-run mode is enabled:
 
-* Use EXACT template structure
-* Do NOT modify sections
+- Do NOT modify code.
+- Do NOT create branch, commit, push, or PR.
+- Do NOT update GitHub statuses.
+- Output the planned operation sequence.
 
 ---
 
-## Output File
+## Final Report (MANDATORY)
 
-Save as:
+Provide:
 
-{{ARTIFACTS_PATH}}/8-AI-TASKS.md
+- ticket_id
+- readiness validation result
+- technical brief path
+- files changed (or planned)
+- branch name
+- commit status
+- PR URL (if created)
+- project status transitions applied
+- traceability updates completed
+- errors/warnings
 
 ---
 
 ## Final Instruction
 
-You are preparing code execution.
+This stage is the default day-to-day execution path for one ticket in Ready.
 
 Everything must be:
 
-* explicit
-* deterministic
-* file-oriented
-* ready for AI
-
-No ambiguity.
-No assumptions.
-No missing context.
+- single-ticket focused
+- status-synchronized
+- quality-gated
+- traceable
