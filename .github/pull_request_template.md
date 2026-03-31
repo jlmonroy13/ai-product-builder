@@ -3,6 +3,7 @@
 - Ticket ID: T-XXX
 - Milestone ID: M-XXX
 - Related Issue: #XXX
+- Closes: #XXX
 
 Describe what changed and why.
 
