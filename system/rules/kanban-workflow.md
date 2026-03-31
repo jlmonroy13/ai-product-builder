@@ -89,9 +89,9 @@ A ticket can move to Done only when:
 
 ### `plan ready`
 
-- Input: tickets in Backlog.
-- Behavior: evaluate DoR and dependency state using Stage 7 export plus GitHub Project status.
-- Output: move eligible tickets to Ready with reason log; move blocked tickets to Blocked with reason.
+- Input: tickets in Backlog and Blocked.
+- Behavior: evaluate DoR and dependency state using Stage 7 export plus GitHub Project status, including reevaluating Blocked tickets whose blockers may now be resolved.
+- Output: move eligible tickets to Ready with reason log; move blocked or still-blocked tickets to Blocked with reason; leave non-ready tickets in Backlog.
 
 ### `task run <ticket_id>`
 
