@@ -69,6 +69,24 @@ You MUST:
 
 ---
 
+## Shared reusable UI primitives (CRITICAL)
+
+After ALL per-screen specifications, you MUST append **one** consolidated section to the same output file (`5-SCREEN-SPECS.md`) using the exact heading and structure from `{{TEMPLATES_PATH}}/5-screen-specs-template.md` (**Shared reusable UI primitives (cross-screen)**).
+
+You MUST:
+
+* **Derive** the inventory **only** from: Discovery (layout, flows, controls implied), and the **Components** (and **UI Structure**) subsections of every screen spec you just wrote
+* **Deduplicate** across screens: e.g. one entry for primary actions, text fields, month control, etc.—not one row per screen repetition
+* List **implementation-oriented primitive types** the build will share (e.g. button, text input, numeric/monetary input, date input, search input, month selector, link, list/table row container, loading/error inline region)—using neutral names; **do not** introduce controls that no screen or Discovery flow requires
+* For each primitive (or small group of variants, e.g. primary vs secondary button if both exist), note **which route(s) / screen(s)** use it
+* **Do NOT** add decorative or out-of-scope widgets (no cards, charts, dashboards) unless Discovery or a screen spec explicitly requires that structure as a **container** for required content—when in doubt, omit
+
+This section is **not** visual design (no colors, spacing tokens, or typography). It is a **reuse map** for implementation and for aligning `components/ui` (or equivalent) with Screen Specs.
+
+If System Design names a UI kit (e.g. shadcn/ui), you MAY add a single column or bullet per primitive: **suggested kit mapping** (e.g. Button, Input, Calendar)—only when it maps 1:1 to an existing primitive you listed; **do not** invent kit components.
+
+---
+
 ## Mapping Rules
 
 ### Data Dependencies
@@ -111,6 +129,8 @@ If provided:
 For EACH screen:
 
 Use EXACT template structure.
+
+Then append **Shared reusable UI primitives (cross-screen)** using the template—**after** the last screen block, in the **same** `5-SCREEN-SPECS.md` file.
 
 ---
 
