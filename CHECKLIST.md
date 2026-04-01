@@ -4,7 +4,7 @@ Use this checklist after any process update to ensure all pipeline artifacts sta
 
 ## 1) Stage and command parity
 
-- [ ] Every active stage prompt in `system/prompts/` has a matching command in `.cursor/commands/`.
+- [ ] Every active stage prompt in `ai-builder/system/prompts/` has a matching command in `.cursor/commands/`.
 - [ ] Every command references the correct prompt file path.
 - [ ] No command references deleted or renamed stages.
 
@@ -17,9 +17,9 @@ Use this checklist after any process update to ensure all pipeline artifacts sta
 
 ## 3) Rules alignment
 
-- [ ] `system/rules/kanban-workflow.md` uses current command contract.
+- [ ] `ai-builder/system/rules/kanban-workflow.md` uses current command contract.
 - [ ] Status transitions match actual command behavior.
-- [ ] `system/rules/spec-manifest.md` lists current source-of-truth artifacts only.
+- [ ] `ai-builder/system/rules/spec-manifest.md` lists current source-of-truth artifacts only.
 - [ ] No references to deprecated stages or outputs.
 
 ## 4) File and output contracts

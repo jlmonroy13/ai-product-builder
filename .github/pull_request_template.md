@@ -61,6 +61,6 @@ Describe exactly how to validate the change manually.
 
 ## Context Updates
 
-- [ ] `projects/default-project/context/progress.md` updated (if needed)
-- [ ] `projects/default-project/context/decisions.md` updated (if needed)
+- [ ] `ai-builder/projects/default-project/context/progress.md` updated (if needed)
+- [ ] `ai-builder/projects/default-project/context/decisions.md` updated (if needed)
 - [ ] Future tickets/artifacts updated when drift was detected

@@ -496,10 +496,10 @@ This repository includes an operational model to run Stage 7, Stage 7B, Stage 7C
 
 ### Governance Files
 
-- `system/rules/kanban-workflow.md`
-- `system/rules/naming-conventions.md`
-- `system/rules/coding-constraints.md`
-- `system/rules/spec-manifest.md`
+- `ai-builder/system/rules/kanban-workflow.md`
+- `ai-builder/system/rules/naming-conventions.md`
+- `ai-builder/system/rules/coding-constraints.md`
+- `ai-builder/system/rules/spec-manifest.md`
 
 ### GitHub Templates
 
