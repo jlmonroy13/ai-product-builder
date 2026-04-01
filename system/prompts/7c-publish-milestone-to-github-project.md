@@ -102,7 +102,23 @@ You MUST:
 4. For each ticket in milestone:
    - create or update GitHub issue
    - title format: `[<ticket_id>] <title>`
-   - include body sections required by issue template
+   - build the issue body from the ticket content in `7-PLANNING.md`; do NOT publish a shortened summary body
+   - include these sections in this order:
+     - `## Metadata`
+     - `## Description`
+     - `## Tasks`
+     - `## Acceptance Criteria`
+     - `## Test Plan`
+     - `## Manual Validation Scenario`
+     - `## Definition of Done`
+     - `## Out of Scope`
+   - preserve ticket-specific details from planning artifacts for `Tasks`, dependencies/blockers metadata, done criteria, and out-of-scope notes
+   - if `7-PLANNING.md` does not contain an explicit `Manual Validation Scenario`, synthesize one from the ticket scope using this structure:
+     - short intro sentence describing the expected manual validation path before implementation starts
+     - `### Preconditions`
+     - `### Steps`
+     - `### Expected Results`
+   - include dependency metadata in the issue body even when the GitHub Project lacks custom dependency fields
    - apply labels from export
    - assign milestone
 5. Add issue to GitHub Project.
