@@ -1,6 +1,6 @@
 # Stage 5 — Screen specs
 
-Follow **exactly** `system/prompts/5-screen-specs.md` (role, rules, output format).
+Follow **exactly** `ai-builder/system/prompts/5-screen-specs.md` (role, rules, output format).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.

@@ -1,6 +1,6 @@
 # Stage 7D — Plan ready (Backlog -> Ready)
 
-Follow **exactly** `system/prompts/7d-plan-ready.md` (role, rules, readiness checks, output report).
+Follow **exactly** `ai-builder/system/prompts/7d-plan-ready.md` (role, rules, readiness checks, output report).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.

@@ -1,6 +1,6 @@
 # Stage 8 — Run ticket lifecycle
 
-Follow **exactly** `system/prompts/8-ai-execution.md` (single-ticket lifecycle, status transitions, quality gates, traceability updates).
+Follow **exactly** `ai-builder/system/prompts/8-ai-execution.md` (single-ticket lifecycle, status transitions, quality gates, traceability updates).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.

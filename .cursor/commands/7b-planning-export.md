@@ -1,6 +1,6 @@
 # Stage 7B — Planning export / parse
 
-Follow **exactly** `system/prompts/7b-planning-export.md` (role, rules, validation, output format).
+Follow **exactly** `ai-builder/system/prompts/7b-planning-export.md` (role, rules, validation, output format).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.

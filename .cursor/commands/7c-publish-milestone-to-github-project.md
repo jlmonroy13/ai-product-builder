@@ -1,6 +1,6 @@
 # Stage 7C — Publish milestone to GitHub Project
 
-Follow **exactly** `system/prompts/7c-publish-milestone-to-github-project.md` (role, rules, idempotency, output report).
+Follow **exactly** `ai-builder/system/prompts/7c-publish-milestone-to-github-project.md` (role, rules, idempotency, output report).
 
 - Resolve `{{ARTIFACTS_PATH}}` as `projects/default-project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.
