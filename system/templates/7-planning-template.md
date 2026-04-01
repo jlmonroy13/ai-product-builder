@@ -80,6 +80,7 @@ Explain what needs to be implemented and why this ticket matters for milestone c
 - [ ] Task 1
 - [ ] Task 2
 - [ ] Task 3
+- [ ] If the ticket documents required environment variables for approved tooling, add a concrete validation step proving the tool can resolve them in the repo setup.
 
 ---
 
@@ -96,6 +97,7 @@ Explain what needs to be implemented and why this ticket matters for milestone c
 - [ ] Criterion 1 (behavior-level and testable)
 - [ ] Criterion 2 (behavior-level and testable)
 - [ ] Criterion 3 (behavior-level and testable)
+- [ ] If environment variables are part of the ticket scope, the relevant toolchain validation command succeeds using the documented local setup.
 
 ---
 
@@ -107,6 +109,7 @@ Explain what needs to be implemented and why this ticket matters for milestone c
   - <What is validated>
 - E2E (if applicable):
   - <What is validated>
+  - Include toolchain smoke checks when env-dependent tooling is in scope (for example `prisma validate` or equivalent).
 
 ---
 

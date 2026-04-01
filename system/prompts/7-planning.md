@@ -64,10 +64,13 @@ Unless a prior artifact or ticket explicitly states **the project repository and
   * dependency installation for the chosen stack (ORM, DB client, UI libs, validation, testing, lint/format)
   * baseline scripts and checks (`lint`, `typecheck`, `test`, `build` or their equivalents)
   * environment configuration documented (e.g. `.env.example`, required vars for Neon / Prisma without storing secrets)
+  * runtime validation that required tooling can actually resolve environment variables in this repo layout (e.g. Prisma CLI can read `DATABASE_URL` from `.env` when Prisma is part of the approved stack)
 * mark those tickets as **Type: setup / chore** with clear done criteria
 * wire **dependencies**: no feature tickets may depend only on “nothing” if bootstrap is still required; they must depend on completed bootstrap tickets
 
 This is **not** a product feature; it is **delivery plumbing** and does not violate “no invention” when it mirrors `4-SYSTEM-DESIGN.md` and tooling sections already chosen there.
+
+When the approved stack includes tooling that reads environment variables outside the main app runtime (for example Prisma CLI via `prisma.config.ts`), bootstrap tickets MUST include at least one explicit validation step and acceptance criterion proving the tool can resolve the required env var(s) from the documented local setup. Documentation alone is not sufficient.
 
 ---
 
