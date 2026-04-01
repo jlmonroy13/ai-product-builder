@@ -51,6 +51,32 @@ If `github_project_url` is provided:
 - Do NOT infer missing dependency status without checking GitHub issue/project state.
 - Do NOT change ticket scope or metadata.
 - Do NOT move tickets outside Backlog or Blocked in this stage.
+- Do NOT move a ticket to Ready if reconciliation against the planning export fails.
+- Do NOT treat GitHub issue numbers as the source of truth; use `ticket_id`.
+
+---
+
+## Reconciliation Gate (CRITICAL)
+
+Before evaluating readiness for any ticket, you MUST reconcile that ticket against:
+
+- `{{ARTIFACTS_PATH}}/7-PLANNING.export.json`
+- the target GitHub repository issues
+- the target GitHub Project items
+
+You MUST verify:
+
+- the `ticket_id` exists exactly once in the export
+- the `ticket_id` exists as exactly one GitHub issue
+- the issue is linked to the target GitHub Project
+- the linked project item has required tracking fields (`ticket_id`, `milestone_id`, `status`)
+- the issue/project metadata required for readiness still matches the export
+
+If reconciliation fails:
+
+- the ticket MUST NOT be moved to Ready
+- move or keep the ticket in Blocked when workflow allows, with a reason that reconciliation is incomplete
+- include the reconciliation failure in the decision log/output report
 
 ---
 
@@ -58,11 +84,12 @@ If `github_project_url` is provided:
 
 For each ticket currently in Backlog or Blocked:
 
-1. Resolve `depends_on` ticket IDs from planning export.
-2. Verify dependency tickets are in Done.
-3. Verify no active external blockers.
-4. Verify acceptance criteria and test plan are present.
-5. Verify required metadata exists:
+1. Reconcile the ticket against export, issue, and project state.
+2. Resolve `depends_on` ticket IDs from planning export.
+3. Verify dependency tickets are in Done.
+4. Verify no active external blockers.
+5. Verify acceptance criteria and test plan are present.
+6. Verify required metadata exists:
    - ticket_id
    - milestone_id
    - priority
@@ -70,8 +97,9 @@ For each ticket currently in Backlog or Blocked:
 
 Decision:
 
-- Move to Ready if all checks pass.
+- Move to Ready if all checks pass, including reconciliation.
 - Move to Blocked if dependency/external blocker fails.
+- Move to Blocked if reconciliation fails and the ticket cannot be trusted for execution readiness.
 - Keep in Backlog if it is not blocked but still missing DoR requirements.
 - Keep in Blocked if dependency/external blocker is still active.
 
@@ -108,6 +136,7 @@ Provide:
 - Blocked count
 - Unchanged Backlog count
 - Unchanged Blocked count
+- Reconciliation failures count
 - Per-ticket decision log:
   - ticket_id
   - current status
