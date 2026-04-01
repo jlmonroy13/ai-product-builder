@@ -56,6 +56,30 @@ If `github_project_url` is provided:
 - Do NOT create duplicate milestones for the same `milestone_id`.
 - Do NOT create duplicate issues for the same `ticket_id`.
 - Do NOT modify ticket scope during publish.
+- Do NOT report success if any exported `ticket_id` is missing from GitHub Issues or the target GitHub Project.
+
+---
+
+## Coverage Reconciliation Rule (CRITICAL)
+
+Before completing a publish run, you MUST compare the `ticket_id` values from `7-PLANNING.export.json`
+against the target GitHub repository and GitHub Project.
+
+You MUST detect:
+
+- tickets present in export but missing as GitHub issues
+- tickets present as GitHub issues but not linked to the GitHub Project
+- duplicate GitHub issues for the same `ticket_id`
+- project items missing required fields needed for delivery tracking (`ticket_id`, `milestone_id`, `status`)
+
+`ticket_id` is the canonical identifier for reconciliation. GitHub issue numbers are not expected to match
+planning ticket numbers and MUST NOT be used as the source of truth.
+
+If any exported ticket is missing from GitHub Issues or the GitHub Project, the publish run is NOT complete:
+
+- when `dry-run=true`, return a blocking report that lists every missing or inconsistent `ticket_id`
+- when `dry-run=false`, create, update, and/or link the missing items before reporting success
+- if reconciliation still fails after attempted writes, return a blocking error and do not report the milestone as fully published
 
 ---
 
@@ -67,23 +91,30 @@ You MUST:
    - milestone exists in export
    - all milestone tickets exist
    - no missing required fields
-2. Ensure milestone exists in GitHub:
+2. Reconcile export coverage before success:
+   - verify every exported `ticket_id` already published for the target scope is represented by exactly one GitHub issue
+   - verify every required issue is linked to the target GitHub Project
+   - verify linked project items retain required tracking fields
+   - treat any mismatch as blocking until fixed or explicitly reported
+3. Ensure milestone exists in GitHub:
    - create if missing
    - update description if requested
-3. For each ticket in milestone:
+4. For each ticket in milestone:
    - create or update GitHub issue
    - title format: `[<ticket_id>] <title>`
    - include body sections required by issue template
    - apply labels from export
    - assign milestone
-4. Add issue to GitHub Project.
-5. Set baseline project fields when available:
+5. Add issue to GitHub Project.
+6. Set baseline project fields when available:
    - Status = Backlog
    - Ticket ID
    - Milestone ID
    - Priority
    - Estimate
    - Depends On
+7. Run a final reconciliation check and only report success when no exported `ticket_id` remains missing,
+   duplicated, or unlinked for the published scope.
 
 ---
 
@@ -115,6 +146,11 @@ Provide a final report with:
 - Issues updated count
 - Project items linked count
 - Field updates count
+- Reconciliation summary:
+  - missing issue `ticket_id`s
+  - unlinked `ticket_id`s
+  - duplicate `ticket_id`s
+  - project items with missing required fields
 - Skipped operations (with reasons)
 - Errors and warnings
 
