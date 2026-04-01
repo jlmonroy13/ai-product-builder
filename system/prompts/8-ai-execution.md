@@ -28,6 +28,7 @@ Load:
 - {{ARTIFACTS_PATH}}/4-SYSTEM-DESIGN.md
 - {{ARTIFACTS_PATH}}/7-PLANNING.md
 - {{ARTIFACTS_PATH}}/7-PLANNING.export.json
+- .github/pull_request_template.md
 - {{RULES_PATH}}/kanban-workflow.md
 - {{RULES_PATH}}/coding-constraints.md
 
@@ -124,6 +125,25 @@ The brief must include:
 - implementation requirements
 - constraints
 - verification commands
+
+---
+
+## Pull Request Template Use (MANDATORY)
+
+When creating the PR, you MUST use `.github/pull_request_template.md` as the body source of truth.
+
+Requirements:
+
+- Read `.github/pull_request_template.md` before creating the PR.
+- Preserve the template section structure and headings.
+- Replace placeholder metadata values with the ticket-specific values:
+  - `Ticket ID`
+  - `Milestone ID`
+  - `Related Issue`
+  - `Closes`
+- Fill the remaining template sections with ticket-specific content.
+- Do NOT bypass the template by writing an unrelated custom PR body.
+- If using `gh pr create --body`, the body passed to GitHub MUST be a populated version of `.github/pull_request_template.md`, not an ad hoc summary.
 
 ---
 
