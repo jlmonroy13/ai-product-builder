@@ -49,30 +49,62 @@ Load:
 - Do NOT change ticket scope.
 - Do NOT skip quality gates (`lint`, `test`, `build`).
 - Do NOT skip status transitions in GitHub Project.
+- Do NOT run if plan/export reconciliation has not been verified for the target `ticket_id`.
+- Do NOT run if the target `ticket_id` is missing from GitHub Issues or the GitHub Project.
+
+---
+
+## Reconciliation Gate (CRITICAL)
+
+Before executing any lifecycle step, you MUST reconcile the requested `ticket_id` against:
+
+- `{{ARTIFACTS_PATH}}/7-PLANNING.export.json`
+- the target GitHub repository issues
+- the target GitHub Project items
+
+You MUST verify:
+
+- the `ticket_id` exists exactly once in the export
+- the `ticket_id` exists as exactly one GitHub issue
+- the issue is linked to the target GitHub Project
+- the linked project item has required delivery fields (`ticket_id`, `milestone_id`, `status`)
+- the GitHub issue/project metadata still matches the export for this ticket
+
+`ticket_id` is the canonical identifier. GitHub issue numbers MUST NOT be treated as the source of truth.
+
+If reconciliation fails, STOP before any status transition, implementation step, branch creation, or PR work:
+
+- when `dry-run=true`, output a blocking reconciliation failure report
+- when `dry-run=false`, return a blocking error instructing the operator to reconcile via the publish flow first
 
 ---
 
 ## Lifecycle Steps
 
-1. Validate ticket state:
+1. Reconcile target ticket coverage:
+   - ticket exists in export
+   - exactly one matching GitHub issue exists
+   - issue is linked to the target project
+   - required tracking fields are present on the project item
+2. Validate ticket state:
    - ticket exists
    - status is Ready
    - no unresolved blockers
-2. Move project item status:
+3. Move project item status:
    - Ready -> In Progress
-3. Generate ticket-specific technical task instructions from planning artifacts.
-4. Implement changes.
-5. Run verification commands:
+4. Generate ticket-specific technical task instructions from planning artifacts.
+5. Implement changes.
+6. Run verification commands:
    - lint
    - test
    - build
-6. Create delivery branch from `main`.
-7. Commit changes.
-8. Push branch.
-9. Create PR using project PR template.
-10. Move project item status:
+7. Create delivery branch from `main`.
+8. Commit changes.
+9. Push branch.
+10. Create PR using project PR template.
+11. Move project item status:
     - In Progress -> In Review
-11. Write technical traceability updates:
+12. Write technical traceability updates:
     - issue execution summary comment
     - `projects/default-project/context/progress.md`
     - `projects/default-project/context/decisions.md` when design-level choices were made
@@ -111,6 +143,7 @@ If dry-run mode is enabled:
 Provide:
 
 - ticket_id
+- reconciliation result
 - readiness validation result
 - technical brief path
 - files changed (or planned)
