@@ -18,7 +18,7 @@
 
 ### Milestone Metadata
 
-- Milestone ID: M-001
+- Milestone ID: M-01
 - Target Outcome: <Business and technical outcome>
 - Recommended Window: <Date range or sprint range>
 - Entry Criteria:
@@ -123,7 +123,7 @@ Explain what needs to be implemented and why this ticket matters for milestone c
 
 Milestone-level dependency graph:
 
-- M-001 depends on: <none or other milestone IDs>
+- M-01 depends on: <none or other milestone IDs>
 - Critical path tickets:
   - T-001 -> T-004 -> T-006
 

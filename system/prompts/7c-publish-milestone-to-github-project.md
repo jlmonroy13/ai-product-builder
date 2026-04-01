@@ -36,7 +36,7 @@ Load:
 - GitHub repository (owner/repo)
 - GitHub Project URL (preferred), example: `https://github.com/orgs/<org>/projects/<number>`
 - GitHub Project owner + project number (fallback when URL is not provided)
-- Target Milestone ID (example: `M-001`)
+- Target Milestone ID (example: `M-01`)
 - Dry-run mode flag (`true|false`)
 
 If any runtime input is missing, stop and ask for it.

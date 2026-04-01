@@ -13,22 +13,22 @@ Define a deterministic delivery workflow that maps Stage 7 planning and Stage 7B
 - Done
 - Blocked
 
-## Required GitHub Project Fields
+## Required Tracking Fields
 
-- Ticket ID (text)
-- Milestone ID (text)
 - Priority (P0, P1, P2)
-- Estimate (XS, S, M, L)
-- Depends On (text, comma-separated Ticket IDs)
-- Blocked By (text)
-- Story ID (optional text)
+- Size (XS, S, M, L) on the GitHub Project board
+- Ticket ID in issue title and issue body metadata
+- Milestone ID in milestone title/label and issue body metadata
+- Depends On in issue body metadata (comma-separated Ticket IDs)
+- Blocked By in issue body metadata
+- Story ID (optional, issue body metadata)
 
 ## Required Labels
 
 - `type:feature|setup|chore|bug|test`
 - `area:frontend|backend|infra|data|qa`
 - `priority:P0|P1|P2`
-- `milestone:M-xxx`
+- `milestone:M-xx`
 
 ## Definitions
 
@@ -36,7 +36,7 @@ Define a deterministic delivery workflow that maps Stage 7 planning and Stage 7B
 
 A ticket can move from Backlog to Ready only when:
 
-- All dependencies in `Depends On` are in Done.
+- All dependencies listed in the issue metadata `Depends On` are in Done.
 - Acceptance criteria are explicit and testable.
 - Scope is bounded to a single responsibility.
 - No active external blocker exists.

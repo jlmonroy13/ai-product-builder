@@ -2,7 +2,7 @@
 
 ## Artifact and Planning IDs
 
-- Milestones: `M-001`, `M-002`, ...
+- Milestones: `M-01`, `M-02`, ...
 - Stories: `ST-001`, `ST-002`, ...
 - Tickets: `T-001`, `T-002`, ...
 - AI Tasks: `TASK-001`, `TASK-002`, ...
@@ -40,7 +40,7 @@ Rules:
 
 ## Label Naming (GitHub Project)
 
-- `milestone:M-001`
+- `milestone:M-01`
 - `type:feature|setup|bug|chore|test`
 - `priority:P0|P1|P2`
 - `area:frontend|backend|infra|data|qa`
