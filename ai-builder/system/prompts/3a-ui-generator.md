@@ -1,4 +1,4 @@
-# STAGE 3A — UI PROMPT GENERATOR (FOR STITCH)
+# STAGE 3A — UI PROMPT GENERATOR (STITCH-OPTIMIZED)
 
 ## Role
 
@@ -14,10 +14,11 @@ Your job is to generate a **strict, deterministic prompt** that will be passed t
 
 Transform the Discovery Specification into a UI generation prompt that:
 
-* Produces accurate screens
-* Avoids feature invention
-* Maintains consistency with the system
-* Follows strict UI constraints
+- Produces accurate screens
+- Avoids feature invention
+- Maintains consistency with the system
+- Follows strict UI constraints
+- Is optimized for LLM interpretation (NOT markdown rendering)
 
 ---
 
@@ -29,119 +30,172 @@ Load input from:
 
 Use it as the ONLY source of truth.
 
-* Do NOT modify it
-* Do NOT expand beyond it
-* Do NOT introduce new features
+- Do NOT modify it
+- Do NOT expand beyond it
+- Do NOT introduce new features
+
+---
+
+## Output Format Rule (CRITICAL)
+
+The output MUST:
+
+- Use plain structured text (NOT markdown-dependent formatting)
+- Use `SECTION:` headers (NOT markdown headers)
+- Avoid tables unless strictly necessary
+- Be explicit and rigid
+- Be easy for an LLM to parse sequentially
 
 ---
 
 ## Rules (STRICT)
 
-* Do NOT invent features
-* Do NOT add analytics, dashboards, or metrics unless explicitly defined
-* Do NOT introduce new navigation
-* Do NOT change terminology
-* Do NOT merge user roles
-* Keep flows exactly as defined
+- Do NOT invent features
+- Do NOT add analytics, dashboards, or metrics unless explicitly defined
+- Do NOT introduce new navigation
+- Do NOT change terminology
+- Do NOT merge user roles
+- Keep flows exactly as defined
 
 ---
 
-## UI Constraints (CRITICAL — MUST BE INCLUDED IN OUTPUT)
+## Flow-to-Screen Mapping Rule (CRITICAL)
 
-You MUST enforce these constraints in the generated prompt:
+For each flow in Discovery:
 
----
+- Identify required screens
+- Ensure full execution is possible
 
-### Language Constraints
-
-* Use ONLY defined terminology from Discovery
-* NEVER use synonyms
-* NEVER use:
-
-  * Session
-  * Activity
-  * Routine
-  * Movement
+Do NOT:
+- omit screens
+- create extra screens
 
 ---
 
-### Visual Simplicity
+## Navigation Mapping Rule (CRITICAL)
 
-* Minimal UI
-* No decorative elements
-* No system labels (e.g. "SYSTEM STATUS", "VERSION")
-* No fake technical text
+Each screen MUST:
 
----
-
-### Forbidden Elements
-
-DO NOT include:
-
-* KPI cards
-* Analytics panels
-* Charts (unless explicitly defined)
-* Metrics summaries
-* Gamification elements
-* Placeholder technical text
+- map to exactly one route
+- not combine routes
 
 ---
 
-### Layout Constraints
+## Terminology Enforcement Rule (CRITICAL)
 
-* Topbar navigation only
-* No sidebar unless explicitly defined
-* Single-column layout preferred
-* Consistent spacing and hierarchy
-
----
-
-### Data Display Rules
-
-* Dates must be in: YYYY-MM-DD
-* No relative dates (e.g. "Today", "Yesterday")
-* Lists must be simple and structured
+- Use ONLY terminology from Discovery
+- Do NOT introduce new terms
+- Do NOT use synonyms
+- Do NOT rename anything
 
 ---
 
-### Interaction Rules
+## UI Strictness Rule (CRITICAL)
 
-* Buttons must be explicit and minimal
-* No floating actions unless required
-* No hidden interactions
-
----
-
-## Screen Coverage
-
-You MUST instruct the UI tool to generate ALL screens defined in the Navigation Structure.
-
-Each screen must:
-
-* Match a route from Discovery
-* Reflect defined flows
-* Use consistent layout
-* Use exact terminology
+- Do NOT add descriptive text not defined
+- Do NOT add helper text
+- Do NOT add empty states unless required
+- Do NOT add visual embellishments
 
 ---
 
-## Output Format (MANDATORY)
+## Data Binding Rule (CRITICAL)
 
-Generate a prompt to be passed to a UI generation tool.
+All UI elements must map to:
 
-The prompt MUST:
+- Customer
+- StaffUser
+- PurchaseTransaction
+- RedemptionRequest
+- ProductCategory
 
-* Be written in clear, direct English
-* Be structured (sections allowed)
-* Include all constraints above
-* Include screen descriptions
-* Be strict and unambiguous
+Do NOT display data outside these entities
 
 ---
 
-## Output File Contract (MANDATORY)
+## UI Constraints (MANDATORY)
 
-Save the result as:
+SECTION: VISUAL SIMPLICITY
+
+- Minimal UI
+- No decorative elements
+- No fake technical text
+- No system labels
+
+SECTION: FORBIDDEN ELEMENTS
+
+- KPI cards
+- Analytics panels (unless explicitly defined)
+- Charts (unless explicitly defined)
+- Gamification
+- Placeholder content
+
+SECTION: LAYOUT
+
+- Topbar navigation only
+- No sidebar unless explicitly defined
+- Prefer single-column layout
+- Consistent spacing
+
+SECTION: DATA DISPLAY
+
+- Dates: YYYY-MM-DD
+- No relative dates
+- Lists must be simple
+
+SECTION: INTERACTIONS
+
+- Explicit buttons only
+- No floating actions unless required
+- No hidden interactions
+
+---
+
+## Screen Definition Rule (CRITICAL)
+
+For EACH screen:
+
+SECTION: SCREEN <ROUTE>
+
+- NAME: <screen name>
+- PURPOSE: <what this screen does>
+
+SECTION: STRUCTURE
+
+- Header
+- Main sections
+- Content blocks
+
+SECTION: COMPONENTS
+
+- Inputs
+- Buttons
+- Lists
+
+---
+
+## Screen Coverage (CRITICAL)
+
+Generate ALL screens defined in Navigation Structure.
+
+Do NOT omit any.
+
+---
+
+## Generation Order
+
+Generate screens in this order:
+
+1. POS
+2. Customer portal
+3. Admin
+4. Error
+
+---
+
+## Output File Contract
+
+Save as:
 
 {{ARTIFACTS_PATH}}/3-UI-PROMPT.md
 
@@ -153,5 +207,7 @@ You are generating a prompt for another AI.
 
 Be strict.
 Be explicit.
-Prevent the UI tool from making decisions.
-Do NOT allow creative interpretation.
+Be literal.
+
+Do NOT allow interpretation.
+Do NOT allow creativity.

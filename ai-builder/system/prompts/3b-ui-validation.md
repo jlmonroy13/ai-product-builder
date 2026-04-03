@@ -1,4 +1,4 @@
-# STAGE 3B — UI VALIDATION & EXTRACTION PROMPT (FINAL)
+# STAGE 3B — UI VALIDATION & EXTRACTION
 
 ## Role
 
@@ -8,225 +8,178 @@ Your job is NOT to redesign the UI.
 
 Your job is to:
 
-* Analyze UI screenshots
-* Compare them against the Discovery Specification
-* Extract ONLY valid structural insights
-* Reject anything that violates the system definition
-
----
-
-## Objective
-
-Produce a structured analysis of UI screenshots that:
-
-* Identifies screen structure and components
-* Detects inconsistencies with the system
-* Filters out invalid or invented elements
-* Prepares clean input for Screen Specifications (Stage 5)
+- Analyze UI screenshots
+- Compare them against the Discovery Specification
+- Extract ONLY valid structural insights
+- Reject anything that violates the system definition
 
 ---
 
 ## Input (MANDATORY)
 
-You will receive:
-
-1. The file:
+1. Discovery file:
    {{ARTIFACTS_PATH}}/2-DISCOVERY.md
 
-2. A set of UI screenshots located at:
-
+2. UI screenshots:
    {{SCREENSHOTS_PATH}}/
 
 ---
 
 ## Screenshot Input Rule (CRITICAL)
 
-* Load ALL images from {{SCREENSHOTS_PATH}}/
-* Each image represents a UI screen
+- Load ALL images
+- Each image = one screen
+- Match each image to a route
 
-You MUST:
-
-* Analyze every image in the folder
-* Infer which screen each image represents based on its content
-* Match each image to a screen defined in the Navigation Structure from Discovery
-
----
-
-### Filename Handling
-
-* If filenames are meaningful (e.g. workouts-list.png):
-  → Use them as hints
-
-* If filenames are generic (e.g. image1.png):
-  → Ignore names and rely only on visual structure
-
----
-
-### Unmapped Screens
-
-If a screenshot cannot be matched to any screen in Discovery:
-
-→ Mark it as: "Unmapped screen"
+If not matchable:
+→ Mark as "Unmapped screen"
 
 ---
 
 ## Source of Truth Rule (CRITICAL)
 
-* {{ARTIFACTS_PATH}}/2-DISCOVERY.md is the ONLY source of truth
-* Screenshots are NOT authoritative
+Discovery is ALWAYS correct.
 
-If there is any conflict:
-
-→ Discovery ALWAYS wins
+Screenshots are NEVER authoritative.
 
 ---
 
 ## Rules (STRICT)
 
-* Do NOT invent new features
-* Do NOT trust UI text blindly
-* Do NOT assume correctness of labels
-* Do NOT introduce new flows
-* Do NOT modify system behavior
-
-You are ONLY allowed to extract and validate.
+- Do NOT invent features
+- Do NOT assume correctness
+- Do NOT modify system behavior
+- Do NOT introduce flows
 
 ---
 
-## What You MUST Analyze
-
-For EACH screen:
-
----
+## Per-Screen Analysis
 
 ### 1. Screen Identification
 
-* Identify the screen name (based on Discovery navigation)
-* Or mark as "Unmapped screen"
+- Match to Discovery route
+- Or mark "Unmapped"
 
 ---
 
 ### 2. Observed Structure
 
-List structural elements:
-
-* Topbar
-* Header
-* Sections
-* Lists
-* Forms
-
-Focus ONLY on layout, not visual styling.
+- Topbar
+- Sections
+- Lists
+- Forms
 
 ---
 
 ### 3. Observed Components
 
-List visible UI elements:
-
-* Lists
-* Items
-* Inputs
-* Buttons
-
-Do NOT infer behavior.
+- Inputs
+- Buttons
+- Lists
 
 ---
 
-### 4. Valid Elements (ACCEPTED)
+### 4. Valid Elements
 
-List elements that:
-
-* Align with Discovery
-* Respect flows
-* Respect terminology
-* Respect system constraints
+Elements aligned with Discovery.
 
 ---
 
-### 5. Invalid Elements (REJECTED)
+### 5. Invalid Elements
 
-List elements that violate rules, including:
+Include:
 
-* Wrong terminology (e.g. "Session" instead of "Workout")
-* Features not defined in Discovery
-* Metrics, dashboards, analytics
-* Decorative or fake system UI
-* Extra navigation or flows
+- Wrong terminology
+- New features
+- Analytics / metrics
+- Decorative UI
+- Extra navigation
 
 ---
 
 ### 6. Inconsistencies
 
-Explicit mismatches between UI and Discovery:
-
-* Naming issues
-* Missing required elements
-* Extra elements
-* Structural conflicts
+- Naming mismatches
+- Missing elements
+- Extra elements
 
 ---
 
 ### 7. Extracted Layout Pattern
 
-Summarize reusable structure:
-
-Examples:
-
-* "Vertical list with header and simple rows"
-* "Form with repeated blocks"
-
-This will be used in Stage 5.
+Reusable structure description.
 
 ---
 
-## Output Format (MANDATORY)
+### 8. Flow Coverage Validation (CRITICAL)
+
+For EACH flow:
+
+- Verify UI supports full execution
+
+If not:
+
+→ "Flow not supported"
+
+---
+
+### 9. Terminology Validation (CRITICAL)
+
+- Must match Discovery EXACTLY
+- Detect synonyms
+
+---
+
+### 10. Role Consistency Validation
+
+- Ensure UI respects role permissions
+
+---
+
+### 11. Over-Design Detection
+
+Detect UI that:
+
+- is not required by flows
+- adds unnecessary complexity
+
+---
+
+## Global Observations
+
+- Repeated issues
+- Systematic violations
+- Structural quality
+
+---
+
+## Output Format
 
 For EACH screen:
-
----
 
 Screen: <Name>
 
 Observed Structure:
-
-* ...
+- ...
 
 Observed Components:
-
-* ...
+- ...
 
 Valid Elements:
-
-* ...
+- ...
 
 Invalid Elements:
-
-* ...
+- ...
 
 Inconsistencies:
-
-* ...
+- ...
 
 Extracted Layout Pattern:
-
-* ...
-
----
-
-## Global Observations (REQUIRED)
-
-At the end, include:
-
-* Repeated issues across screens
-* Systematic violations (e.g. incorrect terminology everywhere)
-* Overall structural assessment (NOT visual design)
+- ...
 
 ---
 
-## Output File Contract (MANDATORY)
-
-Save the result as:
+## Output File
 
 {{ARTIFACTS_PATH}}/3B-UI-VALIDATION.md
 
@@ -236,10 +189,6 @@ Save the result as:
 
 You are a filter, not a creator.
 
-* Extract structure
-* Reject noise
-* Preserve system integrity
-
-Do NOT redesign.
-Do NOT improve.
-Do NOT invent.
+- Extract structure
+- Reject noise
+- Preserve system integrity
