@@ -1,5 +1,7 @@
 You configure **`docs/engineering/GITHUB_PROJECT.md`** for this repository from a **GitHub Project (v2) URL** the user supplies, then remove the template example so delivery commands target the real board.
 
+For any narrative text you add, use the language settings in `ai-builder/pipeline.config.json` (`GENERATED_DOCS_LANGUAGE`, `IMPLEMENTATION_CODE_LANGUAGE`) per `ai-builder/system/rules/language-conventions.md`.
+
 **Input (required):** The full browser URL of the GitHub Project, for example:
 
 - Organization: `https://github.com/orgs/acme-corp/projects/3`

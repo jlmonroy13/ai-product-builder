@@ -1,5 +1,9 @@
 # STAGE 2 — DISCOVERY VALIDATION CHECKLIST
 
+## Global language (CRITICAL)
+
+Expect narrative content in the language set by `GENERATED_DOCS_LANGUAGE` in `ai-builder/pipeline.config.json`. See `ai-builder/system/rules/language-conventions.md`.
+
 ## Structure (CRITICAL)
 
 - [ ] Matches template exactly

@@ -6,9 +6,9 @@ This repository contains a reusable AI-driven product pipeline.
 
 - `system/` → reusable prompts, templates, and rules
 - `project/` → project-specific artifacts, UI assets, and context
-- `pipeline.config.json` → source of truth for path variables
+- `pipeline.config.json` → source of truth for path variables and global language
 
-## Path Variables
+## Path variables
 
 Prompts and templates use variables such as:
 
@@ -17,8 +17,18 @@ Prompts and templates use variables such as:
 - `{{PROMPTS_PATH}}`
 - `{{TEMPLATES_PATH}}`
 - `{{RULES_PATH}}`
+- `{{SYSTEM_PATH}}` (alias for the `system/` root: `ai-builder/system`)
 
 This allows the pipeline to relocate the workspace root without rewriting internal references.
+
+## Language variables
+
+Also defined in `pipeline.config.json` (see `system/rules/language-conventions.md`):
+
+- **`GENERATED_DOCS_LANGUAGE`** — Language for generated markdown artifacts and pipeline documentation (e.g. `Spanish`, `English`).
+- **`IMPLEMENTATION_CODE_LANGUAGE`** — Language for code comments, docstrings, and implementation-time messages when running tickets (identifiers may remain English per stack norms).
+
+Change these once for the whole pipeline; prompts and Cursor commands reference them.
 
 ## Resume
 ### 🧠 AI Product Pipeline — End-to-End Overview

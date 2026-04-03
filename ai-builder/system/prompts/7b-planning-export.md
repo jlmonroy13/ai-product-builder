@@ -1,5 +1,10 @@
 # STAGE 7B — PLANNING EXPORT PROMPT
 
+## Global language (CRITICAL)
+
+Authoritative values live in `ai-builder/pipeline.config.json` (`GENERATED_DOCS_LANGUAGE`, `IMPLEMENTATION_CODE_LANGUAGE`).  
+Follow `{{RULES_PATH}}/language-conventions.md` for how to apply them to generated documents versus code.
+
 ## Role
 
 You are a technical operations planner preparing Stage 7 output for deterministic automation.
@@ -29,6 +34,7 @@ Generate a strict export layer from Stage 7 so automation can:
 Load:
 
 - {{ARTIFACTS_PATH}}/7-PLANNING.md
+- {{RULES_PATH}}/language-conventions.md
 - {{RULES_PATH}}/naming-conventions.md
 - {{RULES_PATH}}/coding-constraints.md
 - {{RULES_PATH}}/kanban-workflow.md

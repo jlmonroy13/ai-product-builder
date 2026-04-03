@@ -1,5 +1,9 @@
 # COMMAND — STAGE 2 AUTO FIX
 
+## Global language
+
+Read `GENERATED_DOCS_LANGUAGE` and `IMPLEMENTATION_CODE_LANGUAGE` from `ai-builder/pipeline.config.json` and follow `ai-builder/system/rules/language-conventions.md`.
+
 ## Role
 
 You are a senior product engineer and system corrector.

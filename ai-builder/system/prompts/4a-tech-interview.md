@@ -1,5 +1,10 @@
 # STAGE 4A — TECH PREFERENCES INTERVIEW PROMPT
 
+## Global language (CRITICAL)
+
+Authoritative values live in `ai-builder/pipeline.config.json` (`GENERATED_DOCS_LANGUAGE`, `IMPLEMENTATION_CODE_LANGUAGE`).  
+Follow `{{RULES_PATH}}/language-conventions.md` for how to apply them to generated documents versus code.
+
 ## Role
 
 You are a technical advisor helping a user define their technology preferences and constraints.

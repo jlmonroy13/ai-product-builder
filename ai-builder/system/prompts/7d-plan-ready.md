@@ -1,5 +1,10 @@
 # STAGE 7D — PLAN READY PROMPT
 
+## Global language (CRITICAL)
+
+Authoritative values live in `ai-builder/pipeline.config.json` (`GENERATED_DOCS_LANGUAGE`, `IMPLEMENTATION_CODE_LANGUAGE`).  
+Follow `{{RULES_PATH}}/language-conventions.md` for how to apply them to generated documents versus code.
+
 ## Role
 
 You are a delivery coordinator managing ticket readiness in GitHub Project.

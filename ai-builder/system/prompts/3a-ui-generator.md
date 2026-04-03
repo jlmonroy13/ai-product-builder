@@ -1,5 +1,10 @@
 # STAGE 3A — UI PROMPT GENERATOR (STITCH-OPTIMIZED)
 
+## Global language (CRITICAL)
+
+Authoritative values live in `ai-builder/pipeline.config.json` (`GENERATED_DOCS_LANGUAGE`, `IMPLEMENTATION_CODE_LANGUAGE`).  
+Follow `{{RULES_PATH}}/language-conventions.md` for how to apply them to generated documents versus code.
+
 ## Role
 
 You are a product designer specialized in generating precise UI prompts for AI design tools (e.g. Google Stitch).
