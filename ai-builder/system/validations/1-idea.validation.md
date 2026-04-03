@@ -3,6 +3,7 @@
 ## Structure Validation (CRITICAL)
 
 - [ ] The output strictly follows the template: `1-idea-template.md`
+- [ ] The artifact H1 is `# STAGE 1 — IDEA` (not the template file’s `IDEA TEMPLATE` title)
 - [ ] No sections are missing
 - [ ] No extra sections were added
 - [ ] Section order is exactly preserved

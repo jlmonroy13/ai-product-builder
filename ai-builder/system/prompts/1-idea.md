@@ -41,6 +41,14 @@ You MUST follow the official Stage 1 template:
 - Do NOT add or remove sections
 - Fill all sections exactly as defined
 
+### Artifact document title (CRITICAL)
+
+The template file’s first line is for authoring only. When saving `1-IDEA.md`, use exactly this as line 1:
+
+`# STAGE 1 — IDEA`
+
+Do **not** copy the template H1 (`# STAGE 1 — IDEA TEMPLATE`). From `## Product Name` downward, headings and section order must match the template exactly.
+
 ---
 
 ## Information Preservation Rule (CRITICAL)
