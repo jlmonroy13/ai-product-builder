@@ -6,7 +6,6 @@ This repository contains a reusable AI-driven product pipeline.
 
 - `system/` → reusable prompts, templates, and rules
 - `projects/` → project-specific artifacts, UI assets, and context
-- `engine/` → future delivery and automation layer
 - `pipeline.config.json` → source of truth for path variables
 
 ## Path Variables
