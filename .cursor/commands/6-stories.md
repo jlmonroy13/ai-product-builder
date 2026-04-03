@@ -2,6 +2,6 @@
 
 Follow **exactly** `ai-builder/system/prompts/6-stories.md` (role, rules, output format).
 
-- Resolve `{{ARTIFACTS_PATH}}` as `ai-builder/projects/default-project/artifacts` (see `pipeline.config.json`).
+- Resolve `{{ARTIFACTS_PATH}}` as `ai-builder/project/artifacts` (see `pipeline.config.json`).
 - Required inputs are listed in that prompt.
-- Save the stage output to `ai-builder/projects/default-project/artifacts/6-REFINED-STORIES.md` when persisting artifacts.
+- Save the stage output to `ai-builder/project/artifacts/6-REFINED-STORIES.md` when persisting artifacts.

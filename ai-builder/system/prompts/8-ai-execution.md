@@ -107,8 +107,8 @@ If reconciliation fails, STOP before any status transition, implementation step,
     - In Progress -> In Review
 12. Write technical traceability updates:
     - issue execution summary comment
-    - `ai-builder/projects/default-project/context/progress.md`
-    - `ai-builder/projects/default-project/context/decisions.md` when design-level choices were made
+    - `ai-builder/project/context/progress.md`
+    - `ai-builder/project/context/decisions.md` when design-level choices were made
 
 ---
 

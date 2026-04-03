@@ -5,7 +5,7 @@ This repository contains a reusable AI-driven product pipeline.
 ## Structure
 
 - `system/` → reusable prompts, templates, and rules
-- `projects/` → project-specific artifacts, UI assets, and context
+- `project/` → project-specific artifacts, UI assets, and context
 - `pipeline.config.json` → source of truth for path variables
 
 ## Path Variables
@@ -18,7 +18,7 @@ Prompts and templates use variables such as:
 - `{{TEMPLATES_PATH}}`
 - `{{RULES_PATH}}`
 
-This allows the pipeline to scale across multiple projects without rewriting internal references.
+This allows the pipeline to relocate the workspace root without rewriting internal references.
 
 ## Resume
 ### 🧠 AI Product Pipeline — End-to-End Overview

@@ -61,7 +61,7 @@ You MUST produce valid JSON with this top-level structure:
 ```json
 {
   "plan_id": "PLAN-001",
-  "project": "default-project",
+  "project": "main",
   "milestones": [],
   "tickets": [],
   "validation": {
